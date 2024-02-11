@@ -3,7 +3,7 @@ package com.jaken;
 import com.jaken.view.PaymentSystemForm;
 
 /**
- * Hello world!
+ * SPP Payment Sistem
  *
  */
 public class App 
