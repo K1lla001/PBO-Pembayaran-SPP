@@ -8,6 +8,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.print.PrinterJob;
 import java.util.List;
+import java.util.Objects;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 
@@ -324,6 +325,9 @@ public class PaymentSystemForm extends javax.swing.JFrame {
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {
         String studentId = textStudentId.getText();
+        if (Objects.equals(studentId, "")) {
+            JOptionPane.showMessageDialog(this, "Pastikan untuk memilih data yang valid", "Invalid Action", JOptionPane.INFORMATION_MESSAGE);
+        }
         Integer result = this.payment.deletePayment(Integer.valueOf(studentId));
         if (result == 0) {
             JOptionPane.showMessageDialog(this, "Data berhasil dihapus!", "Success", JOptionPane.INFORMATION_MESSAGE);
@@ -339,6 +343,9 @@ public class PaymentSystemForm extends javax.swing.JFrame {
 
     private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {
         String studentId = textStudentId.getText();
+        if(Objects.equals(studentId, "")) {
+            JOptionPane.showMessageDialog(this, "Pastikan untuk memilih data yang valid", "Invalid Action", JOptionPane.INFORMATION_MESSAGE);
+        }
         String studentName = textStudentName.getText();
         String className = textClass.getText();
         String major = comboBoxMajor.getSelectedItem().toString();
